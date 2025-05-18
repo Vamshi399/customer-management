@@ -104,10 +104,7 @@ After starting the application, the OpenAPI documentation is available at:
 ## Testing
 
 Run all tests with:
-```bash
-mvn test
-```bash
-exit
+`mvn test`
 
 ---
 
