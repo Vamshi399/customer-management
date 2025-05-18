@@ -1,4 +1,4 @@
-package com.example.customermanagement.service;
+package com.example.customermanagement.service.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -31,10 +31,9 @@ import com.example.customermanagement.enums.Tier;
 import com.example.customermanagement.exception.ResourceNotFoundException;
 import com.example.customermanagement.model.Customer;
 import com.example.customermanagement.repository.CustomerRepository;
-import com.example.customermanagement.service.impl.CustomerServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
-public class CustomerServiceTest {
+public class CustomerServiceTestImpl {
 
     @Mock
     private CustomerRepository customerRepository;

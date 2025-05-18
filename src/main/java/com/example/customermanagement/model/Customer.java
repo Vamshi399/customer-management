@@ -28,7 +28,7 @@ public class Customer {
     
     @NotBlank(message = "Name is required")
     @Size(max = 100, message = "Name must be less than 100 characters")
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
     
     @NotBlank(message = "Email is required")
