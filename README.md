@@ -231,4 +231,26 @@ Use the Swagger UI (mentioned above) to try out the APIs.
 *   Provide appropriate JSON payloads for POST/PUT requests.
 *   Observe the HTTP status codes and response bodies.
 *   For example, creating a new customer should return a `201 Created` status, and fetching customers should return a `200 OK` with a list of customers.
+* create customer success
+![create_customer_success_swagger](https://github.com/user-attachments/assets/5433e497-f26d-478b-a04b-c380b95d53dc)
+
+* get customer by ID success
+![get_customer_byID_success_swagger](https://github.com/user-attachments/assets/8762f38b-ef64-4cb7-a2a7-bd7f74d121cc)
+
+* get customer by Name success
+![get_customer_byName_success_swagger](https://github.com/user-attachments/assets/9eaa8d16-03d0-45b0-870a-19d6b4893fd9)
+
+* get customer by Email success
+![get_customer_byEmail_success_swagger](https://github.com/user-attachments/assets/c10e31ab-60cd-4e28-9e58-3863fcfec0d2)
+
+* update customer by ID success
+![update_customer_byID_success_swagger](https://github.com/user-attachments/assets/c9e273fe-b03a-4ed7-abfc-5b3ad235a5fc)
+
+* delete customer by ID success
+![delete_customer_byID_success_swagger](https://github.com/user-attachments/assets/46b366de-6d11-4d69-b783-bb53400ae85d)
+
+
+
+
+
 
