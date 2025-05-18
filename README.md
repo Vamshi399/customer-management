@@ -106,6 +106,7 @@ After starting the application, the OpenAPI documentation is available at:
 Run all tests with:
 ```bash
 mvn test
+
 ---
 
 # Customer Management Application
