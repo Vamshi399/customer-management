@@ -2,9 +2,6 @@ server:
   port: 8081  # Configure Tomcat port here
 
 spring:
-  autoconfigure:
-      exclude[0]: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
-      exclude[1]: org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
   datasource:
     url: jdbc:h2:mem:customerdb
     driverClassName: org.h2.Driver
@@ -39,7 +36,7 @@ logging:
     # Spring Framework packages
     '[org.springframework]': WARN
     '[org.springframework.web]': DEBUG
-    '[org.springframework.security]': INFO
+    # '[org.springframework.security]': INFO
 
     # Hibernate/SQL logging
     '[org.hibernate]': ERROR

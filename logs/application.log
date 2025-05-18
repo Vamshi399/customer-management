@@ -2107,3 +2107,295 @@ Caused by: java.lang.ClassNotFoundException: PasswordEncoder
 2025-05-18 15:23:28 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.customermanagement.dto.CustomerRequest@19a2ae7]
 2025-05-18 15:23:55 [http-nio-8081-exec-5] INFO  c.e.c.controller.CustomerController - Received request to create customer: com.example.customermanagement.dto.CustomerRequest@19a2ae7
 2025-05-18 15:23:57 [http-nio-8081-exec-5] INFO  c.e.c.s.impl.CustomerServiceImpl - Attempting to create customer with request: com.example.customermanagement.dto.CustomerRequest@19a2ae7
+2025-05-18 15:35:52 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:35:52 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:35:52 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:36:15 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:36:35 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:36:35 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:36:35 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:36:38 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:36:39 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:36:40 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:36:40 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:36:40 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:36:44 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 65.097 seconds (process running for 72.975)
+2025-05-18 15:37:28 [Thread-5] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:37:29 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:37:29 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:37:29 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:37:35 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:37:38 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:37:38 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:37:38 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:37:39 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:37:40 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:37:40 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:37:41 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:37:41 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:37:45 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 17.436 seconds (process running for 134.132)
+2025-05-18 15:37:47 [Thread-7] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:37:48 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:37:48 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:37:48 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:37:56 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:37:58 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:37:58 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:37:58 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:38:00 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:38:00 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:38:00 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:38:01 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:38:01 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:38:05 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 17.762 seconds (process running for 153.595)
+2025-05-18 15:38:37 [Thread-12] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:38:38 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:38:38 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:38:38 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:38:44 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:38:46 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:38:46 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:38:46 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:38:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:38:48 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:38:49 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:38:49 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:38:49 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:38:52 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 14.266 seconds (process running for 200.483)
+2025-05-18 15:39:22 [Thread-16] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:39:23 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:39:23 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:39:23 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:39:30 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:39:36 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:39:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:39:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:39:38 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:39:38 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:39:39 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:39:39 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:39:39 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:39:42 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 19.358 seconds (process running for 250.776)
+2025-05-18 15:39:44 [Thread-20] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:39:44 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:39:44 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:39:44 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:39:51 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:40:01 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:40:01 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:40:01 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:40:03 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:40:03 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:40:04 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:40:04 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:40:04 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:40:07 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 22.808 seconds (process running for 275.707)
+2025-05-18 15:40:09 [Thread-24] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:40:09 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:40:09 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:40:09 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:40:15 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:40:16 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:40:16 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:40:16 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:40:18 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:40:19 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:40:20 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:40:20 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:40:20 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:40:24 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 15.511 seconds (process running for 293.148)
+2025-05-18 15:41:11 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-18 15:41:12 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-05-18 15:41:12 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-05-18 15:41:12 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-05-18 15:41:13 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4d3119b6
+2025-05-18 15:41:13 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@46a70e9a
+2025-05-18 15:41:13 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-05-18 15:41:13 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1560 ms
+2025-05-18 15:41:15 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - POST "/customers", parameters={}
+2025-05-18 15:41:16 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.customermanagement.controller.CustomerController#createCustomer(CustomerRequest)
+2025-05-18 15:41:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.customermanagement.dto.CustomerRequest@7eeee296]
+2025-05-18 15:41:23 [http-nio-8081-exec-2] INFO  c.e.c.controller.CustomerController - Received request to create customer: com.example.customermanagement.dto.CustomerRequest@7eeee296
+2025-05-18 15:41:51 [http-nio-8081-exec-2] INFO  c.e.c.s.impl.CustomerServiceImpl - Attempting to create customer with request: com.example.customermanagement.dto.CustomerRequest@7eeee296
+2025-05-18 15:42:00 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.example.customermanagement.exception.GlobalExceptionHandler#handleAllUncaughtExceptions(Exception, WebRequest)
+2025-05-18 15:42:00 [http-nio-8081-exec-2] ERROR c.e.c.e.GlobalExceptionHandler - An unexpected error occurred: Could not commit JPA transaction
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:571) ~[spring-orm-6.2.6.jar:6.2.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.6.jar:6.2.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.6.jar:6.2.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.4.5.jar:3.4.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.6.jar:6.2.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.6.jar:6.2.6]
+	at jdk.proxy10/jdk.proxy10.$Proxy201.save(Unknown Source) ~[na:na]
+	at com.example.customermanagement.service.impl.CustomerServiceImpl.createCustomer(CustomerServiceImpl.java:74) ~[classes/:na]
+	at com.example.customermanagement.controller.CustomerController.createCustomer(CustomerController.java:53) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: jakarta.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.internal.ExceptionConverterImpl.convertCommitException(ExceptionConverterImpl.java:67) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.6.jar:6.2.6]
+	... 66 common frames omitted
+Caused by: jakarta.validation.ConstraintViolationException: Validation failed for classes [com.example.customermanagement.model.Customer] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must be null', propertyPath=annualSpend, rootBeanClass=class com.example.customermanagement.model.Customer, messageTemplate='{jakarta.validation.constraints.Null.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be null', propertyPath=lastPurchaseDate, rootBeanClass=class com.example.customermanagement.model.Customer, messageTemplate='{jakarta.validation.constraints.Null.message}'}
+]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:251) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:106) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.13.Final.jar:6.6.13.Final]
+	... 67 common frames omitted
+2025-05-18 15:42:00 [http-nio-8081-exec-2] DEBUG c.e.c.dto.ErrorResponse - Created ErrorResponse (general): status=500, error=Internal Server Error, message=An unexpected internal server error occurred. Please contact support., path=/customers
+2025-05-18 15:42:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-05-18 15:42:01 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.customermanagement.dto.ErrorResponse@2773dc27]
+2025-05-18 15:42:01 [http-nio-8081-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction]
+2025-05-18 15:42:01 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2025-05-18 15:42:01 [Thread-28] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:42:05 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:42:05 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:42:05 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:42:11 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:42:13 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:42:13 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:42:13 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:42:15 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:42:15 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:42:16 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:42:16 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:42:17 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:42:20 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 15.411 seconds (process running for 408.876)
+2025-05-18 15:43:17 [Thread-32] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:43:44 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:43:44 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:43:44 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:43:50 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:43:52 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:43:52 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:43:52 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:43:54 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:43:55 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:43:56 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:43:56 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:43:56 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:43:59 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 15.838 seconds (process running for 508.191)
+2025-05-18 15:44:01 [Thread-40] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:44:02 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:44:02 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:44:02 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:44:08 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:44:23 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:44:23 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:44:23 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:44:24 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:44:24 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:44:25 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:44:25 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:44:26 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:44:29 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 27.719 seconds (process running for 537.749)
+2025-05-18 15:44:31 [Thread-44] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-18 15:44:31 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Starting CustomerManagementApplication using Java 21.0.6 with PID 32992 (C:\Users\vamshi\Downloads\customer-management\target\classes started by vamshi in C:\Users\vamshi\Downloads\customer-management)
+2025-05-18 15:44:31 [restartedMain] DEBUG c.e.c.CustomerManagementApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-18 15:44:31 [restartedMain] INFO  c.e.c.CustomerManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-18 15:44:35 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-05-18 15:44:37 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id uuid not null, annual_spend numeric(10,2), email varchar(255) not null, last_purchase_date date, name varchar(100) not null, primary key (id))
+2025-05-18 15:44:37 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers drop constraint if exists UKrfbvkrffamfql7cjmen8v976v
+2025-05-18 15:44:37 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists customers add constraint UKrfbvkrffamfql7cjmen8v976v unique (email)
+2025-05-18 15:44:45 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-18 15:44:45 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2025-05-18 15:44:46 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-05-18 15:44:46 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-18 15:44:46 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-18 15:44:50 [restartedMain] INFO  c.e.c.CustomerManagementApplication - Started CustomerManagementApplication in 19.217 seconds (process running for 558.77)
+2025-05-18 15:45:10 [http-nio-8081-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6c936c40
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@3f509988
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-05-18 15:45:10 [http-nio-8081-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 198 ms
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/customers", parameters={}
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.customermanagement.controller.CustomerController#createCustomer(CustomerRequest)
+2025-05-18 15:45:10 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.customermanagement.dto.CustomerRequest@665e3697]
+2025-05-18 15:45:11 [http-nio-8081-exec-3] INFO  c.e.c.controller.CustomerController - Received request to create customer: com.example.customermanagement.dto.CustomerRequest@665e3697
+2025-05-18 15:45:11 [http-nio-8081-exec-3] INFO  c.e.c.s.impl.CustomerServiceImpl - Attempting to create customer with request: com.example.customermanagement.dto.CustomerRequest@665e3697
+2025-05-18 15:45:11 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - insert into customers (annual_spend,email,last_purchase_date,name,id) values (?,?,?,?,?)
+2025-05-18 15:45:32 [http-nio-8081-exec-3] INFO  c.e.c.s.impl.CustomerServiceImpl - Customer created successfully with ID: fcd48bdd-da4c-4ba2-9817-e5a13d14115a
+2025-05-18 15:45:32 [http-nio-8081-exec-3] DEBUG c.e.c.s.impl.CustomerServiceImpl - Mapping Customer entity (ID: fcd48bdd-da4c-4ba2-9817-e5a13d14115a) to CustomerResponse.
+2025-05-18 15:45:32 [http-nio-8081-exec-3] DEBUG c.e.c.s.impl.CustomerServiceImpl - Calculating tier for annualSpend: 10123.00 and lastPurchaseDate: 2025-05-17
+2025-05-18 15:45:32 [http-nio-8081-exec-3] INFO  c.e.c.s.impl.CustomerServiceImpl - Calculated tier: PLATINUM for annualSpend: 10123.00, lastPurchaseDate: 2025-05-17
+2025-05-18 15:45:32 [http-nio-8081-exec-3] DEBUG c.e.c.s.impl.CustomerServiceImpl - Mapped CustomerResponse: Tier set to PLATINUM for customer ID: fcd48bdd-da4c-4ba2-9817-e5a13d14115a
+2025-05-18 15:45:32 [http-nio-8081-exec-3] INFO  c.e.c.controller.CustomerController - Customer created successfully with ID: fcd48bdd-da4c-4ba2-9817-e5a13d14115a. Location: http://localhost:8081/customers/fcd48bdd-da4c-4ba2-9817-e5a13d14115a
+2025-05-18 15:45:32 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-05-18 15:45:32 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.customermanagement.dto.CustomerResponse@5a7caf69]
+2025-05-18 15:45:32 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
