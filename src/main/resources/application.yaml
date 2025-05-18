@@ -1,0 +1,79 @@
+server:
+  port: 8081  # Configure Tomcat port here
+
+spring:
+  autoconfigure:
+      exclude[0]: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      exclude[1]: org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
+  datasource:
+    url: jdbc:h2:mem:customerdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # Convenient for development. For production, consider 'validate' and use migration tools (Flyway/Liquibase).
+
+# Logging configuration notes:
+# If 'logging.config' (like 'classpath:logback-spring.xml' below) is specified and the file exists,
+# it will generally override the logging.level, logging.file, and logging.pattern configurations
+# set directly in this YAML file. The settings below are commented out assuming 'logback-spring.xml'
+# is the primary configuration source. If you intend to configure logging primarily via this YAML,
+# then 'logging.config' should be commented out or removed.
+
+# Package-specific logging levels
+logging:
+  level:
+    # Root package (can be used as default)
+    root: WARN
+
+    # Apply the group level
+    web: DEBUG
+    sql: TRACE
+
+    # Spring Framework packages
+    '[org.springframework]': WARN
+    '[org.springframework.web]': DEBUG
+    '[org.springframework.security]': INFO
+
+    # Hibernate/SQL logging
+    '[org.hibernate]': ERROR
+    '[org.hibernate.SQL]': DEBUG
+    '[org.hibernate.type.descriptor.sql.BasicBinder]': TRACE
+    
+    # Your application packages
+    '[com.example.customermanagement]': DEBUG
+    '[com.example.customermanagement.service]': TRACE
+    '[com.example.customermanagement.controller]': INFO
+    '[com.example.customermanagement.repository]': DEBUG
+  
+  # Log file configuration
+  file:
+    name: logs/application.log  # Log file name/location
+    max-size: 10MB              # Max size before rotation
+    max-history: 7              # Number of archived logs to keep
+    total-size-cap: 100MB       # Total size cap for all logs
+    # clean-history-on-start: true # Typically 'false' for production to preserve logs across restarts.
+                                   # 'true' can be useful in development.
+  
+  # Log pattern configuration
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+  
+  # Log group definitions (group multiple loggers together)
+  group:
+    web: org.springframework.core.codec, org.springframework.http, org.springframework.web
+    sql: org.springframework.jdbc.core, org.hibernate.SQL, org.hibernate.type.descriptor.sql.BasicBinder
+    rest: com.example.customermanagement,org.springframework.http
+  
+  # Configuration file (overrides all other settings if specified)
+  # config: classpath:logback-spring.xml
+  
+  # Register a shutdown hook for the logging system
+  register-shutdown-hook: true
