@@ -19,6 +19,8 @@ import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.example.customermanagement.dto.ErrorResponse;
+
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 
@@ -48,7 +50,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                                                                 ? fieldError.getDefaultMessage()
                                                                 : "Validation error"));
 
-                com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
+                ErrorResponse errorResponse = new ErrorResponse(
                                 httpStatus.value(),
                                 "Validation Failed",
                                 "Input validation failed for one or more fields.",
@@ -74,7 +76,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                         message = ex.getMostSpecificCause().getMessage();
                 }
 
-                com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
+                ErrorResponse errorResponse = new ErrorResponse(
                                 httpStatus.value(),
                                 "Bad Request",
                                 message,
@@ -85,12 +87,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         // Handle custom ResourceNotFoundException
         @ExceptionHandler(ResourceNotFoundException.class)
-        public ResponseEntity<org.springframework.web.ErrorResponse> handleResourceNotFoundException(
+        public ResponseEntity<ErrorResponse> handleResourceNotFoundException(
                         ResourceNotFoundException ex, WebRequest request) {
                 String path = getRequestPath(request);
                 log.info("Handling ResourceNotFoundException: {} for path: {}", ex.getMessage(), path); // Added logging
 
-                com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
+                ErrorResponse errorResponse = new ErrorResponse(
                                 HttpStatus.NOT_FOUND.value(),
                                 "Resource Not Found",
                                 ex.getMessage(),
@@ -100,10 +102,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         
         // Handle entity not found exceptions
         @ExceptionHandler(EntityNotFoundException.class)
-        public ResponseEntity<org.springframework.web.ErrorResponse> handleEntityNotFound(
+        public ResponseEntity<ErrorResponse> handleEntityNotFound(
                         EntityNotFoundException ex, WebRequest request) { // Added WebRequest
 
-                com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
+                ErrorResponse errorResponse = new ErrorResponse(
                                 HttpStatus.NOT_FOUND.value(),
                                 "Entity Not Found",
                                 ex.getMessage(),
@@ -114,7 +116,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         // Handle constraint violations (e.g., @NotNull, @Size, etc.)
         @ExceptionHandler(ConstraintViolationException.class)
-        public ResponseEntity<org.springframework.web.ErrorResponse> handleConstraintViolation(
+        public ResponseEntity<ErrorResponse> handleConstraintViolation(
                         ConstraintViolationException ex, WebRequest request) { // Added WebRequest
                 
                 String path = getRequestPath(request);
@@ -128,7 +130,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                         errors.put(field, message);
                 });
 
-                com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
+                ErrorResponse errorResponse = new ErrorResponse(
                                 HttpStatus.BAD_REQUEST.value(),
                                 "Constraint Violation",
                                 "One or more constraints were violated.",
@@ -140,13 +142,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         // Handle all other exceptions
         @ExceptionHandler(Exception.class)
-        public ResponseEntity<org.springframework.web.ErrorResponse> handleAllUncaughtExceptions( // Renamed for clarity
+        public ResponseEntity<ErrorResponse> handleAllUncaughtExceptions( // Renamed for clarity
                         Exception ex,
                         WebRequest request) {
 
                 log.error("An unexpected error occurred: {}", ex.getMessage(), ex); // Added logging
 
-                com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
+                ErrorResponse errorResponse = new ErrorResponse(
                                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
                                 "Internal Server Error",
                                 "An unexpected internal server error occurred. Please contact support.", // More
