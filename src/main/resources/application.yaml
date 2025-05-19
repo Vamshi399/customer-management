@@ -1,5 +1,5 @@
 server:
-  port: 8081  # Configure Tomcat port here
+  port: 8080  # Configure Tomcat port here
 
 spring:
   datasource:

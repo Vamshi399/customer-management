@@ -80,15 +80,15 @@ The API implements robust error handling mechanisms:
 1. Clone the repository
 2. Build the project: `mvn clean install`
 3. Run the application: `mvn spring-boot:run`
-   - The application will start on `http://localhost:8081`.
+   - The application will start on `http://localhost:8080`.
 
 
 ## API Documentation
 
 After starting the application, the OpenAPI documentation is available at:
 
-- Swagger UI: http://localhost:8081/swagger-ui.html
-- OpenAPI JSON: http://localhost:8081/v3/api-docs
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- OpenAPI JSON: http://localhost:8080/v3/api-docs
 
 ## API Endpoints
 
@@ -209,7 +209,7 @@ Once the Tomcat server has started successfully:
 
 1.  **Swagger UI (API Documentation & Testing):**
     Open your web browser and navigate to:
-    http://localhost:8081/swagger-ui/index.html#/
+    http://localhost:8080/swagger-ui/index.html#/
 
     *   *(Note: The port might be `8080` if not explicitly configured to `8081` in your application properties or `.env` file. Please check your `application.properties` or `.env` for the `server.port` configuration.)*
     *   You can explore and test the available APIs using Swagger UI. Provide appropriate inputs for each endpoint to see the responses.
