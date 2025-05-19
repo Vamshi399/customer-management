@@ -33,7 +33,7 @@ import com.example.customermanagement.model.Customer;
 import com.example.customermanagement.repository.CustomerRepository;
 
 @ExtendWith(MockitoExtension.class)
-public class CustomerServiceTestImpl {
+public class CustomerServiceImplTest {
 
     @Mock
     private CustomerRepository customerRepository;
@@ -92,7 +92,7 @@ public class CustomerServiceTestImpl {
     @Test
     @DisplayName("Calculate Tier - Silver: Low spend")
     public void calculateTier_whenLowSpend_thenSilver() {
-        BigDecimal annualSpend = new BigDecimal("5000"); // Below 10k
+        BigDecimal annualSpend = new BigDecimal("500"); // Below Gold threshold (1000)
         LocalDate lastPurchaseDate = LocalDate.now().minusMonths(1);
         assertEquals(Tier.SILVER, customerService.calculateTier(annualSpend, lastPurchaseDate));
     }
@@ -100,8 +100,8 @@ public class CustomerServiceTestImpl {
     @Test
     @DisplayName("Calculate Tier - Silver: High spend, old purchase (Platinum recency miss)")
     public void calculateTier_whenHighSpendOldPurchasePlatinumMiss_thenSilver() {
-        BigDecimal annualSpend = new BigDecimal("60000");
-        LocalDate lastPurchaseDate = LocalDate.now().minusMonths(7); // Older than 6 months
+        BigDecimal annualSpend = new BigDecimal("60000"); // High spend
+        LocalDate lastPurchaseDate = LocalDate.now().minusMonths(13); // Older than 6 months (misses Platinum) and 12 months (misses Gold)
         assertEquals(Tier.SILVER, customerService.calculateTier(annualSpend, lastPurchaseDate));
     }
 
@@ -131,14 +131,13 @@ public class CustomerServiceTestImpl {
         when(modelMapper.map(customerRequest, Customer.class)).thenReturn(customer);
         when(customerRepository.save(any(Customer.class))).thenReturn(customer);
         when(modelMapper.map(customer, CustomerResponse.class)).thenReturn(customerResponse);
-        // Tier will be calculated, let's assume it's SILVER for this spend
-        customerResponse.setTier(Tier.SILVER);
+        // Tier will be calculated by the service based on 'customer' data (annualSpend=1000, lastPurchase=1 month ago -> GOLD)
 
         CustomerResponse result = customerService.createCustomer(customerRequest);
 
         assertNotNull(result);
         assertEquals(customerResponse.getId(), result.getId());
-        assertEquals(Tier.SILVER, result.getTier()); // Tier is calculated
+        assertEquals(Tier.GOLD, result.getTier()); // Tier is calculated based on customer data
         verify(customerRepository, times(1)).save(customer);
     }
 

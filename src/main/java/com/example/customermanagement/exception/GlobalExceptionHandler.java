@@ -156,24 +156,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 return new ResponseEntity<>(errorResponse, errorResponse.getStatusCode());
         }
 
-        // Assuming org.springframework.security.access.AccessDeniedException
-        // @ExceptionHandler(AccessDeniedException.class)
-        // public ResponseEntity<org.springframework.web.ErrorResponse> handleSpringSecurityAccessDenied(
-        //                 AccessDeniedException ex,
-        //                 WebRequest request) {
-                
-        //         String path = getRequestPath(request);
-        //         log.warn("Handling AccessDeniedException for path: {}. Message: {}", path, ex.getMessage()); // Using WARN for security-related issues
-
-        //         com.example.customermanagement.dto.ErrorResponse errorResponse = new com.example.customermanagement.dto.ErrorResponse(
-        //                         HttpStatus.FORBIDDEN.value(),
-        //                         "Access Denied",
-        //                         ex.getMessage(),
-        //                         getRequestPath(request));
-
-        //         return new ResponseEntity<>(errorResponse, errorResponse.getStatusCode());
-        // }
-
         private String getRequestPath(WebRequest request) {
                 if (request instanceof ServletWebRequest) {
                         return ((ServletWebRequest) request).getRequest().getRequestURI();

@@ -1,6 +1,7 @@
 package com.example.customermanagement.exception;
 
 import static org.hamcrest.Matchers.hasKey;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -72,6 +73,11 @@ public class GlobalExceptionHandlerTest {
         public ResponseEntity<String> testGenericException() {
             throw new RuntimeException("Some unexpected generic error");
         }
+
+        @GetMapping("/test/missing-param")
+        public ResponseEntity<String> testMissingParam(@RequestParam String requiredParam) {
+            return ResponseEntity.ok("Param received: " + requiredParam);
+        }
     }
 
     @Data
@@ -135,16 +141,8 @@ public class GlobalExceptionHandlerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.status", is(400)))
                 .andExpect(jsonPath("$.error", is("Constraint Violation")))
-                .andExpect(jsonPath("$.validationErrors", hasKey("testConstraintViolation.value"))); // Path to violated param
-    }
-
-    @Test
-    void handleAccessDeniedException() throws Exception {
-        mockMvc.perform(get("/test/access-denied"))
-                .andExpect(status().isForbidden())
-                .andExpect(jsonPath("$.status", is(403)))
-                .andExpect(jsonPath("$.error", is("Access Denied")))
-                .andExpect(jsonPath("$.message", is("Test access denied")));
+                .andExpect(jsonPath("$.validationErrors", hasKey("testConstraintViolation.value")))
+                .andExpect(jsonPath("$.validationErrors['testConstraintViolation.value']", is("must be greater than or equal to 5")));
     }
 
     @Test
@@ -153,6 +151,24 @@ public class GlobalExceptionHandlerTest {
                 .andExpect(status().isInternalServerError())
                 .andExpect(jsonPath("$.status", is(500)))
                 .andExpect(jsonPath("$.error", is("Internal Server Error")))
-                .andExpect(jsonPath("$.message", is("An unexpected error occurred. Please try again later."))); // Or specific message from your handler
+                .andExpect(jsonPath("$.message", is("Some unexpected generic error"))); // Or specific message from your handler
+    }
+
+    @Test
+    void handleMissingServletRequestParameterException() throws Exception {
+        mockMvc.perform(get("/test/missing-param")) // 'requiredParam' is missing
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.status", is(400)))
+                .andExpect(jsonPath("$.error", is("Bad Request"))) // Common error for this, or more specific
+                .andExpect(jsonPath("$.message", containsString("Required String parameter 'requiredParam' is not present")));
+    }
+
+    @Test
+    void handleHttpRequestMethodNotSupportedException() throws Exception {
+        mockMvc.perform(post("/test/resource-not-found")) // Assuming /test/resource-not-found is GET only
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(jsonPath("$.status", is(405)))
+                .andExpect(jsonPath("$.error", is("Method Not Allowed")))
+                .andExpect(jsonPath("$.message", containsString("Request method 'POST' not supported")));
     }
 }

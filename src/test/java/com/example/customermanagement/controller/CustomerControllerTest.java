@@ -134,7 +134,7 @@ public class CustomerControllerTest {
     public void givenCustomerExists_whenGetCustomerByEmail_thenReturnsCustomer() throws Exception {
         createTestCustomer(validCustomerRequest);
 
-        mockMvc.perform(get("/customers").param("email", validCustomerRequest.getEmail()))
+        mockMvc.perform(get("/customers/").param("email", validCustomerRequest.getEmail()))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.name").value(validCustomerRequest.getName()))
             .andExpect(jsonPath("$.email").value(validCustomerRequest.getEmail()));
@@ -142,7 +142,7 @@ public class CustomerControllerTest {
 
     @Test
     public void whenGetCustomerByNonExistentEmail_thenNotFound() throws Exception {
-        mockMvc.perform(get("/customers").param("email", "nonexistent@example.com"))
+        mockMvc.perform(get("/customers/").param("email", "nonexistent@example.com"))
             .andExpect(status().isNotFound())
             .andExpect(jsonPath("$.status", is(404)))
             .andExpect(jsonPath("$.error", is("Resource Not Found")));
